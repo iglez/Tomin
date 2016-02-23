@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BC0941C7C04A400FB7584 /* CategoryController.swift */; };
 		93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63451C76C1E0007F0D37 /* AppDelegate.swift */; };
 		93AC63481C76C1E0007F0D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63471C76C1E0007F0D37 /* ViewController.swift */; };
 		93AC634B1C76C1E0007F0D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AC63491C76C1E0007F0D37 /* Main.storyboard */; };
@@ -15,7 +16,7 @@
 		93AC63531C76C1E0007F0D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AC63511C76C1E0007F0D37 /* LaunchScreen.storyboard */; };
 		93AC635E1C76C1E0007F0D37 /* BudgyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC635D1C76C1E0007F0D37 /* BudgyTests.swift */; };
 		93AC63691C76C1E0007F0D37 /* BudgyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63681C76C1E0007F0D37 /* BudgyUITests.swift */; };
-		93AC63771C76C270007F0D37 /* ProductCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63761C76C270007F0D37 /* ProductCatalog.swift */; };
+		93AC63771C76C270007F0D37 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63761C76C270007F0D37 /* ProductController.swift */; };
 		93AC637D1C76CC67007F0D37 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC637C1C76CC67007F0D37 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		938BC0941C7C04A400FB7584 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		93AC63421C76C1E0007F0D37 /* Budgy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AC63451C76C1E0007F0D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93AC63471C76C1E0007F0D37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		93AC63641C76C1E0007F0D37 /* BudgyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AC63681C76C1E0007F0D37 /* BudgyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgyUITests.swift; sourceTree = "<group>"; };
 		93AC636A1C76C1E0007F0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93AC63761C76C270007F0D37 /* ProductCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductCatalog.swift; path = ../ProductCatalog.swift; sourceTree = "<group>"; };
+		93AC63761C76C270007F0D37 /* ProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductController.swift; path = ../ProductController.swift; sourceTree = "<group>"; };
 		93AC637C1C76CC67007F0D37 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				93AC637B1C76CC57007F0D37 /* Models */,
-				93AC63761C76C270007F0D37 /* ProductCatalog.swift */,
+				93AC63761C76C270007F0D37 /* ProductController.swift */,
+				938BC0941C7C04A400FB7584 /* CategoryController.swift */,
 				93AC63451C76C1E0007F0D37 /* AppDelegate.swift */,
 				93AC63471C76C1E0007F0D37 /* ViewController.swift */,
 				93AC63491C76C1E0007F0D37 /* Main.storyboard */,
@@ -277,7 +280,8 @@
 				93AC63481C76C1E0007F0D37 /* ViewController.swift in Sources */,
 				93AC634E1C76C1E0007F0D37 /* Budgy.xcdatamodeld in Sources */,
 				93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */,
-				93AC63771C76C270007F0D37 /* ProductCatalog.swift in Sources */,
+				93AC63771C76C270007F0D37 /* ProductController.swift in Sources */,
+				938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +506,7 @@
 				93AC636F1C76C1E0007F0D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93AC63701C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "BudgyTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +515,7 @@
 				93AC63721C76C1E0007F0D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93AC63731C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "BudgyUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +524,7 @@
 				93AC63751C76C1E0007F0D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
