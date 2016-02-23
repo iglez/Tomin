@@ -44,7 +44,22 @@ class Model {
         return results
     }
     
-//    func insertProduct(name: String, categoryId: Int)-> Bool {
+    func search(table:String, column: String, value: String)-> [NSManagedObject] {
+        var results = [NSManagedObject]()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: table)
+        fetchRequest.predicate = NSPredicate(format:"\(column) contains[c] %@", value)
+        
+        do {
+            results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        return results
+    }
+    
+
     func insert(table: String, data: [String: AnyObject])-> Bool {
         
         var isInserterd = false

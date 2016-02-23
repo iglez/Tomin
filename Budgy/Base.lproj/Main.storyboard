@@ -18,18 +18,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="x0M-tM-znN" kind="relationship" relationship="viewControllers" id="wuN-El-dSf"/>
-                        <segue destination="VWf-4z-2tB" kind="relationship" relationship="viewControllers" id="Nyc-Cw-9KL"/>
+                        <segue destination="ls9-OM-cJP" kind="relationship" relationship="viewControllers" id="afD-Cv-Na5"/>
                         <segue destination="Tjp-wV-hjW" kind="relationship" relationship="viewControllers" id="wT4-N6-Cnf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3k-dI-ei0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216" y="-9"/>
+            <point key="canvasLocation" x="-287" y="77"/>
         </scene>
         <!--Busqueda-->
         <scene sceneID="9mq-ch-vl3">
             <objects>
-                <viewController id="VWf-4z-2tB" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpT-D5-g7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="VWf-4z-2tB" customClass="ProductSearchViewController" customModule="Budgy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sxd-Jy-6cM"/>
                         <viewControllerLayoutGuide type="bottom" id="75d-d2-5BR"/>
@@ -51,10 +52,79 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Busqueda" id="tFv-Kd-aBk"/>
+                    <connections>
+                        <outlet property="search" destination="w1Z-fw-nUb" id="8m6-3w-fgW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xpT-D5-g7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160" y="802"/>
+            <point key="canvasLocation" x="-1047" y="757"/>
+        </scene>
+        <!--Busqueda-->
+        <scene sceneID="GaT-vJ-kJy">
+            <objects>
+                <tableViewController id="k99-KV-4ZD" customClass="ProductSearchViewController" customModule="Budgy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bAc-Rl-ypK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="vvr-NI-71i">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductSearchViewCell" id="mNN-KN-36Z" customClass="ProductSearchViewCell" customModule="Budgy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mNN-KN-36Z" id="Fyr-oq-pDu">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enn-V2-Ci0">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Enn-V2-Ci0" firstAttribute="trailing" secondItem="Fyr-oq-pDu" secondAttribute="trailingMargin" id="8u1-0G-pX9"/>
+                                        <constraint firstItem="Enn-V2-Ci0" firstAttribute="leading" secondItem="Fyr-oq-pDu" secondAttribute="leadingMargin" id="dxn-Ah-C84"/>
+                                        <constraint firstItem="Enn-V2-Ci0" firstAttribute="top" secondItem="Fyr-oq-pDu" secondAttribute="topMargin" constant="3" id="noM-4Q-jGJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="Enn-V2-Ci0" id="MBV-vZ-xiE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="k99-KV-4ZD" id="VIY-io-Kpe"/>
+                            <outlet property="delegate" destination="k99-KV-4ZD" id="Zx3-AQ-FZX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Busqueda" id="ZOz-ca-fTe" userLabel="Busqueda"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWa-6W-aOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="992"/>
+        </scene>
+        <!--Busqueda-->
+        <scene sceneID="ATp-UY-ZYD">
+            <objects>
+                <navigationController id="ls9-OM-cJP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Busqueda" id="iMQ-HE-aqP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nU3-oq-OrC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="k99-KV-4ZD" kind="relationship" relationship="rootViewController" id="Z3q-GX-EUN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykd-US-91v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287" y="992"/>
         </scene>
         <!--Carrito-->
         <scene sceneID="0q3-J2-Gex">
@@ -215,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bES-3l-hnb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductSearchViewCell" id="bES-3l-hnb">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bES-3l-hnb" id="aRn-jl-F1r">
