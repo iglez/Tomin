@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		936E731F1C7C1C6500991896 /* ProductSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E731E1C7C1C6500991896 /* ProductSearchController.swift */; };
+		9387B29E1C7EC2BE0033800A /* TestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9387B29D1C7EC2BE0033800A /* TestJson.swift */; };
 		938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BC0941C7C04A400FB7584 /* CategoryController.swift */; };
 		93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63451C76C1E0007F0D37 /* AppDelegate.swift */; };
 		93AC63481C76C1E0007F0D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63471C76C1E0007F0D37 /* ViewController.swift */; };
 		93AC634B1C76C1E0007F0D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AC63491C76C1E0007F0D37 /* Main.storyboard */; };
-		93AC634E1C76C1E0007F0D37 /* Budgy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AC634C1C76C1E0007F0D37 /* Budgy.xcdatamodeld */; };
+		93AC634E1C76C1E0007F0D37 /* Tomin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AC634C1C76C1E0007F0D37 /* Tomin.xcdatamodeld */; };
 		93AC63501C76C1E0007F0D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AC634F1C76C1E0007F0D37 /* Assets.xcassets */; };
 		93AC63531C76C1E0007F0D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AC63511C76C1E0007F0D37 /* LaunchScreen.storyboard */; };
 		93AC635E1C76C1E0007F0D37 /* BudgyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC635D1C76C1E0007F0D37 /* BudgyTests.swift */; };
@@ -40,19 +41,20 @@
 
 /* Begin PBXFileReference section */
 		936E731E1C7C1C6500991896 /* ProductSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchController.swift; sourceTree = "<group>"; };
+		9387B29D1C7EC2BE0033800A /* TestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJson.swift; sourceTree = "<group>"; };
 		938BC0941C7C04A400FB7584 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
-		93AC63421C76C1E0007F0D37 /* Budgy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AC63421C76C1E0007F0D37 /* Tomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AC63451C76C1E0007F0D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93AC63471C76C1E0007F0D37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93AC634A1C76C1E0007F0D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		93AC634D1C76C1E0007F0D37 /* Budgy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Budgy.xcdatamodel; sourceTree = "<group>"; };
+		93AC634D1C76C1E0007F0D37 /* Tomin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tomin.xcdatamodel; sourceTree = "<group>"; };
 		93AC634F1C76C1E0007F0D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93AC63521C76C1E0007F0D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93AC63541C76C1E0007F0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93AC63591C76C1E0007F0D37 /* BudgyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AC63591C76C1E0007F0D37 /* Tomin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tomin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AC635D1C76C1E0007F0D37 /* BudgyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgyTests.swift; sourceTree = "<group>"; };
 		93AC635F1C76C1E0007F0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93AC63641C76C1E0007F0D37 /* BudgyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AC63641C76C1E0007F0D37 /* Tomin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tomin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AC63681C76C1E0007F0D37 /* BudgyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgyUITests.swift; sourceTree = "<group>"; };
 		93AC636A1C76C1E0007F0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93AC63761C76C270007F0D37 /* ProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductController.swift; path = ../ProductController.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		93AC63391C76C1E0007F0D37 = {
 			isa = PBXGroup;
 			children = (
-				93AC63441C76C1E0007F0D37 /* Budgy */,
+				93AC63441C76C1E0007F0D37 /* Tomin */,
 				93AC635C1C76C1E0007F0D37 /* BudgyTests */,
 				93AC63671C76C1E0007F0D37 /* BudgyUITests */,
 				93AC63431C76C1E0007F0D37 /* Products */,
@@ -97,14 +99,14 @@
 		93AC63431C76C1E0007F0D37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93AC63421C76C1E0007F0D37 /* Budgy.app */,
-				93AC63591C76C1E0007F0D37 /* BudgyTests.xctest */,
-				93AC63641C76C1E0007F0D37 /* BudgyUITests.xctest */,
+				93AC63421C76C1E0007F0D37 /* Tomin.app */,
+				93AC63591C76C1E0007F0D37 /* Tomin.xctest */,
+				93AC63641C76C1E0007F0D37 /* Tomin.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		93AC63441C76C1E0007F0D37 /* Budgy */ = {
+		93AC63441C76C1E0007F0D37 /* Tomin */ = {
 			isa = PBXGroup;
 			children = (
 				93AC637B1C76CC57007F0D37 /* Models */,
@@ -117,9 +119,9 @@
 				93AC634F1C76C1E0007F0D37 /* Assets.xcassets */,
 				93AC63511C76C1E0007F0D37 /* LaunchScreen.storyboard */,
 				93AC63541C76C1E0007F0D37 /* Info.plist */,
-				93AC634C1C76C1E0007F0D37 /* Budgy.xcdatamodeld */,
+				93AC634C1C76C1E0007F0D37 /* Tomin.xcdatamodeld */,
 			);
-			path = Budgy;
+			path = Tomin;
 			sourceTree = "<group>";
 		};
 		93AC635C1C76C1E0007F0D37 /* BudgyTests */ = {
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				93AC637C1C76CC67007F0D37 /* Model.swift */,
+				9387B29D1C7EC2BE0033800A /* TestJson.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -151,9 +154,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93AC63411C76C1E0007F0D37 /* Budgy */ = {
+		93AC63411C76C1E0007F0D37 /* Tomin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93AC636D1C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "Budgy" */;
+			buildConfigurationList = 93AC636D1C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "Tomin" */;
 			buildPhases = (
 				93AC633E1C76C1E0007F0D37 /* Sources */,
 				93AC633F1C76C1E0007F0D37 /* Frameworks */,
@@ -163,14 +166,14 @@
 			);
 			dependencies = (
 			);
-			name = Budgy;
+			name = Tomin;
 			productName = Budgy;
-			productReference = 93AC63421C76C1E0007F0D37 /* Budgy.app */;
+			productReference = 93AC63421C76C1E0007F0D37 /* Tomin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		93AC63581C76C1E0007F0D37 /* BudgyTests */ = {
+		93AC63581C76C1E0007F0D37 /* TominTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93AC63701C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "BudgyTests" */;
+			buildConfigurationList = 93AC63701C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "TominTests" */;
 			buildPhases = (
 				93AC63551C76C1E0007F0D37 /* Sources */,
 				93AC63561C76C1E0007F0D37 /* Frameworks */,
@@ -181,14 +184,14 @@
 			dependencies = (
 				93AC635B1C76C1E0007F0D37 /* PBXTargetDependency */,
 			);
-			name = BudgyTests;
+			name = TominTests;
 			productName = BudgyTests;
-			productReference = 93AC63591C76C1E0007F0D37 /* BudgyTests.xctest */;
+			productReference = 93AC63591C76C1E0007F0D37 /* Tomin.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		93AC63631C76C1E0007F0D37 /* BudgyUITests */ = {
+		93AC63631C76C1E0007F0D37 /* TominUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93AC63731C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "BudgyUITests" */;
+			buildConfigurationList = 93AC63731C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "TominUITests" */;
 			buildPhases = (
 				93AC63601C76C1E0007F0D37 /* Sources */,
 				93AC63611C76C1E0007F0D37 /* Frameworks */,
@@ -199,9 +202,9 @@
 			dependencies = (
 				93AC63661C76C1E0007F0D37 /* PBXTargetDependency */,
 			);
-			name = BudgyUITests;
+			name = TominUITests;
 			productName = BudgyUITests;
-			productReference = 93AC63641C76C1E0007F0D37 /* BudgyUITests.xctest */;
+			productReference = 93AC63641C76C1E0007F0D37 /* Tomin.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93AC633D1C76C1E0007F0D37 /* Build configuration list for PBXProject "Budgy" */;
+			buildConfigurationList = 93AC633D1C76C1E0007F0D37 /* Build configuration list for PBXProject "Tomin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,9 +243,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93AC63411C76C1E0007F0D37 /* Budgy */,
-				93AC63581C76C1E0007F0D37 /* BudgyTests */,
-				93AC63631C76C1E0007F0D37 /* BudgyUITests */,
+				93AC63411C76C1E0007F0D37 /* Tomin */,
+				93AC63581C76C1E0007F0D37 /* TominTests */,
+				93AC63631C76C1E0007F0D37 /* TominUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -281,7 +284,8 @@
 			files = (
 				93AC637D1C76CC67007F0D37 /* Model.swift in Sources */,
 				93AC63481C76C1E0007F0D37 /* ViewController.swift in Sources */,
-				93AC634E1C76C1E0007F0D37 /* Budgy.xcdatamodeld in Sources */,
+				93AC634E1C76C1E0007F0D37 /* Tomin.xcdatamodeld in Sources */,
+				9387B29E1C7EC2BE0033800A /* TestJson.swift in Sources */,
 				936E731F1C7C1C6500991896 /* ProductSearchController.swift in Sources */,
 				93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */,
 				93AC63771C76C270007F0D37 /* ProductController.swift in Sources */,
@@ -310,12 +314,12 @@
 /* Begin PBXTargetDependency section */
 		93AC635B1C76C1E0007F0D37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 93AC63411C76C1E0007F0D37 /* Budgy */;
+			target = 93AC63411C76C1E0007F0D37 /* Tomin */;
 			targetProxy = 93AC635A1C76C1E0007F0D37 /* PBXContainerItemProxy */;
 		};
 		93AC63661C76C1E0007F0D37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 93AC63411C76C1E0007F0D37 /* Budgy */;
+			target = 93AC63411C76C1E0007F0D37 /* Tomin */;
 			targetProxy = 93AC63651C76C1E0007F0D37 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -425,10 +429,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Budgy/Info.plist;
+				INFOPLIST_FILE = Tomin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.Budgy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.Tomin;
+				PRODUCT_NAME = Tomin;
 			};
 			name = Debug;
 		};
@@ -436,10 +440,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Budgy/Info.plist;
+				INFOPLIST_FILE = Tomin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.Budgy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.Tomin;
+				PRODUCT_NAME = Tomin;
 			};
 			name = Release;
 		};
@@ -450,8 +454,8 @@
 				INFOPLIST_FILE = BudgyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.BudgyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budgy.app/Budgy";
+				PRODUCT_NAME = Tomin;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tomin.app/Tomin";
 			};
 			name = Debug;
 		};
@@ -462,8 +466,8 @@
 				INFOPLIST_FILE = BudgyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.BudgyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budgy.app/Budgy";
+				PRODUCT_NAME = Tomin;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tomin.app/Tomin";
 			};
 			name = Release;
 		};
@@ -473,7 +477,7 @@
 				INFOPLIST_FILE = BudgyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.BudgyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Tomin;
 				TEST_TARGET_NAME = Budgy;
 				USES_XCTRUNNER = YES;
 			};
@@ -485,7 +489,7 @@
 				INFOPLIST_FILE = BudgyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.BudgyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Tomin;
 				TEST_TARGET_NAME = Budgy;
 				USES_XCTRUNNER = YES;
 			};
@@ -494,7 +498,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93AC633D1C76C1E0007F0D37 /* Build configuration list for PBXProject "Budgy" */ = {
+		93AC633D1C76C1E0007F0D37 /* Build configuration list for PBXProject "Tomin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93AC636B1C76C1E0007F0D37 /* Debug */,
@@ -503,7 +507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93AC636D1C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "Budgy" */ = {
+		93AC636D1C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "Tomin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93AC636E1C76C1E0007F0D37 /* Debug */,
@@ -512,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93AC63701C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "BudgyTests" */ = {
+		93AC63701C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "TominTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93AC63711C76C1E0007F0D37 /* Debug */,
@@ -521,7 +525,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93AC63731C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "BudgyUITests" */ = {
+		93AC63731C76C1E0007F0D37 /* Build configuration list for PBXNativeTarget "TominUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93AC63741C76C1E0007F0D37 /* Debug */,
@@ -533,13 +537,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		93AC634C1C76C1E0007F0D37 /* Budgy.xcdatamodeld */ = {
+		93AC634C1C76C1E0007F0D37 /* Tomin.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				93AC634D1C76C1E0007F0D37 /* Budgy.xcdatamodel */,
+				93AC634D1C76C1E0007F0D37 /* Tomin.xcdatamodel */,
 			);
-			currentVersion = 93AC634D1C76C1E0007F0D37 /* Budgy.xcdatamodel */;
-			path = Budgy.xcdatamodeld;
+			currentVersion = 93AC634D1C76C1E0007F0D37 /* Tomin.xcdatamodel */;
+			path = Tomin.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

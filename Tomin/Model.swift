@@ -13,6 +13,64 @@ import CoreData
 let model:Model = Model()
 
 class Model {
+    
+    func sync(){
+        let endpoint = NSURL(string: "http://localhost:9000/api/1/evt/contact")
+        let data = NSData(contentsOfURL: endpoint!)
+        
+        do {
+            
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! [String: AnyObject]
+            
+//            if let status = json["status"] as? String {
+//                print(status)
+//            }
+            syncData(json)
+            
+        } catch let error as NSError {
+            print("Failed to load: \(error.localizedDescription)")
+        }
+    }
+    
+    func syncJson(){
+//        let str = "{\"status\":\"ok\"}"
+        let str = TestJson().testData()
+        let data = str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+        
+        do {
+            
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String: AnyObject]
+            
+//            if let status = json["status"] as? String {
+//                print(status)
+//            }
+            
+            syncData(json)
+            
+        } catch let error as NSError {
+            print("Failed to load: \(error.localizedDescription)")
+        }
+    }
+    
+    func syncData(json: [String: AnyObject]){
+        if let status = json["status"] as? String {
+            print(status)
+        }
+        
+        if let data = json["data"] as? NSArray {
+            print(data[0]) //TODO: Make a for
+            if let item = data[0] as? [String: AnyObject] {
+                if let clave = item["clave"] as? Int {
+                    print(clave)
+                }
+                // categoria
+                // clave
+                // imagen
+                // nombre
+                // precio
+            }
+        }
+    }
 
     func listProducts(table: String)-> [NSManagedObject] {
         

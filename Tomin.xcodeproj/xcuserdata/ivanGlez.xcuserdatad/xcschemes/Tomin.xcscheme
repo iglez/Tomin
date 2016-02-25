@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93AC63411C76C1E0007F0D37"
-               BuildableName = "Budgy.app"
-               BlueprintName = "Budgy"
-               ReferencedContainer = "container:Budgy.xcodeproj">
+               BuildableName = "Tomin.app"
+               BlueprintName = "Tomin"
+               ReferencedContainer = "container:Tomin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93AC63581C76C1E0007F0D37"
-               BuildableName = "BudgyTests.xctest"
-               BlueprintName = "BudgyTests"
-               ReferencedContainer = "container:Budgy.xcodeproj">
+               BuildableName = "Tomin.xctest"
+               BlueprintName = "TominTests"
+               ReferencedContainer = "container:Tomin.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93AC63631C76C1E0007F0D37"
-               BuildableName = "BudgyUITests.xctest"
-               BlueprintName = "BudgyUITests"
-               ReferencedContainer = "container:Budgy.xcodeproj">
+               BuildableName = "Tomin.xctest"
+               BlueprintName = "TominUITests"
+               ReferencedContainer = "container:Tomin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93AC63411C76C1E0007F0D37"
-            BuildableName = "Budgy.app"
-            BlueprintName = "Budgy"
-            ReferencedContainer = "container:Budgy.xcodeproj">
+            BuildableName = "Tomin.app"
+            BlueprintName = "Tomin"
+            ReferencedContainer = "container:Tomin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93AC63411C76C1E0007F0D37"
-            BuildableName = "Budgy.app"
-            BlueprintName = "Budgy"
-            ReferencedContainer = "container:Budgy.xcodeproj">
+            BuildableName = "Tomin.app"
+            BlueprintName = "Tomin"
+            ReferencedContainer = "container:Tomin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93AC63411C76C1E0007F0D37"
-            BuildableName = "Budgy.app"
-            BlueprintName = "Budgy"
-            ReferencedContainer = "container:Budgy.xcodeproj">
+            BuildableName = "Tomin.app"
+            BlueprintName = "Tomin"
+            ReferencedContainer = "container:Tomin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

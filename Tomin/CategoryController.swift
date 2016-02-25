@@ -21,6 +21,10 @@ class CategoryTableViewController: UITableViewController{
     var categories = [NSManagedObject]()
     
     override func viewDidLoad() {
+        
+        model.syncJson()
+        
+        
 //        var data = [String: AnyObject]()
 //        data["name"] = "Category 1"
 //        data["id"] = 1
