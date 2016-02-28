@@ -44,7 +44,7 @@ class CategoryTableViewController: UITableViewController{
         
         let category = categories[indexPath.row]
         
-        cell.categoryName.text = category.valueForKey("name") as? String
+        cell.categoryName.text = category.valueForKey("nombre") as? String
         
         return cell
 
@@ -60,7 +60,7 @@ class CategoryTableViewController: UITableViewController{
             let viewController:ProductTableViewController = segue.destinationViewController as! ProductTableViewController
             let indexPath = self.tableView.indexPathForSelectedRow
             let category = categories[indexPath!.row]
-            viewController.categoryId = category.valueForKey("id") as! Int
+            viewController.categoryId = category.valueForKey("id") as! String
         }
         
     }

@@ -19,7 +19,7 @@ class ProductViewCell: UITableViewCell {
 
 class ProductTableViewController: UITableViewController {
     
-    var categoryId = 0
+    var categoryId = ""
     var products = [NSManagedObject]()
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class ProductTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        products = model.fetch("Product", column: "categoryId", value: String(categoryId))
+        products = model.fetch("Product", column: "categoriaId", value: String(categoryId))
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -59,7 +59,7 @@ class ProductTableViewController: UITableViewController {
         
         let product = products[indexPath.row]
         
-        cell.name.text = product.valueForKey("name") as? String
+        cell.name.text = product.valueForKey("nombre") as? String
         cell.price.text = ""
         
         return cell

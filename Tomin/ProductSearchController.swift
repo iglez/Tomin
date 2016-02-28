@@ -29,7 +29,7 @@ class ProductSearchViewController: UITableViewController {
     }
     
     func filterContentForSearchText(searchText: String) {
-        products = model.search("Product", column: "name", value: searchText)
+        products = model.search("Product", column: "nombre", value: searchText)
         tableView.reloadData()
     }
     
@@ -42,7 +42,7 @@ class ProductSearchViewController: UITableViewController {
         
         let product = products[indexPath.row]
         
-        cell.name.text = product.valueForKey("name") as? String
+        cell.name.text = product.valueForKey("nombre") as? String
 //        cell.price.text = ""
 
         return cell

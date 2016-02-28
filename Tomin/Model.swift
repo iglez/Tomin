@@ -25,7 +25,7 @@ class Model {
 //            if let status = json["status"] as? String {
 //                print(status)
 //            }
-            syncData(json)
+            syncProduct(json)
             
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
@@ -45,31 +45,90 @@ class Model {
 //                print(status)
 //            }
             
-            syncData(json)
+            syncProduct(json)
             
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
         }
     }
     
-    func syncData(json: [String: AnyObject]){
+    func syncProduct(json: [String: AnyObject]){
+        
+        //validate if status is ok
         if let status = json["status"] as? String {
             print(status)
-        }
-        
-        if let data = json["data"] as? NSArray {
-            print(data[0]) //TODO: Make a for
-            if let item = data[0] as? [String: AnyObject] {
-                if let clave = item["clave"] as? Int {
-                    print(clave)
-                }
-                // categoria
-                // clave
-                // imagen
-                // nombre
-                // precio
+            deleteAll("Product")
+            
+            if let data = json["data"] as? NSArray {
+                data.forEach({ (item) -> () in
+                    
+                    var product: [String :AnyObject] = [String :AnyObject]()
+                    product["id"] = NSUUID().UUIDString
+                    
+                    if let categoria = item["categoria"] as? String {
+                        product["categoria"] = categoria
+                        
+                        var categorias = [NSManagedObject]()
+                        categorias = self.search("Category", column: "nombre", value: categoria)
+                        if categorias.isEmpty {
+                            var category: [String :AnyObject] = [String :AnyObject]()
+                            category["id"] = NSUUID().UUIDString
+                            category["nombre"] = categoria
+                            self.insert("Category", data: category)
+                            
+                            product["categoriaId"] = category["id"]
+                        } else {
+                            if let categoriaId = categorias.first!.valueForKey("id") as? String {
+                                product["categoriaId"] = categoriaId
+                            }
+                        }
+                        
+                    }
+                    
+                    if let clave = item["clave"] as? Int {
+                        product["clave"] = String(clave)
+                    }
+                    
+                    if let imagen = item["imagen"] as? String {
+                        product["imagen"] = imagen
+                    }
+                    
+                    if let nombre = item["nombre"] as? String {
+                        product["nombre"] = nombre
+                    }
+                    
+                    if let precio = item["precio"] as? String {
+                        product["precio"] = precio
+                    }
+                    
+                    insert("Product", data: product)
+                })
+                
             }
         }
+    }
+    
+    func deleteAll(table: String) -> Bool{
+        var isAllDeleted: Bool = false
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: table)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+                isAllDeleted = true
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(table) error : \(error) \(error.userInfo)")
+        }
+        return isAllDeleted
     }
 
     func listProducts(table: String)-> [NSManagedObject] {
@@ -78,6 +137,10 @@ class Model {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: table)
+        
+        let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         
         do {
             results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
@@ -94,6 +157,10 @@ class Model {
         let fetchRequest = NSFetchRequest(entityName: table)
         fetchRequest.predicate = NSPredicate(format:"\(column) == %@", value)
         
+        let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
+        
         do {
             results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
         } catch let error as NSError {
@@ -107,7 +174,12 @@ class Model {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: table)
+
         fetchRequest.predicate = NSPredicate(format:"\(column) contains[c] %@", value)
+        
+        let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         
         do {
             results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
