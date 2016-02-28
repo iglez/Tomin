@@ -19,10 +19,16 @@ class ProductViewCell: UITableViewCell {
 
 class ProductTableViewController: UITableViewController {
     
+    let searchController = UISearchController(searchResultsController: nil)
     var categoryId = ""
     var products = [NSManagedObject]()
     
     override func viewDidLoad() {
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
 
 //        var data = [String: AnyObject]()
 //        data["name"] = "Product 1"
@@ -50,7 +56,13 @@ class ProductTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        products = model.fetch("Product", column: "categoriaId", value: String(categoryId))
+        if categoryId == "" {
+            products = model.list("Product")
+        } else {
+            products = model.fetch("Product", column: "categoriaId", value: String(categoryId))
+        }
+        
+        //products = model.fetch("Product", column: "categoriaId", value: String(categoryId))
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -69,6 +81,31 @@ class ProductTableViewController: UITableViewController {
         return products.count
     }
     
+    func filterContentForSearchText(searchText: String) {
+        
+        if searchText == "" {
+            if categoryId == "" {
+                products = model.list("Product")
+            } else {
+                products = model.fetch("Product", column: "categoriaId", value: String(categoryId))
+            }
+            
+        } else {
+            if categoryId == "" {
+                products = model.search("Product", column: "nombre", value: searchText)
+            } else {
+               products = model.search("Product", column1: "categoriaId", value1: String(categoryId), column2: "nombre", value2: searchText)
+            }
+        }
+        
+        tableView.reloadData()
+    }
 
+}
+
+extension ProductTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
     
 }

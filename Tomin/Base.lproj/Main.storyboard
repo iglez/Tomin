@@ -27,42 +27,9 @@
             <point key="canvasLocation" x="-287" y="77"/>
         </scene>
         <!--Busqueda-->
-        <scene sceneID="9mq-ch-vl3">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xpT-D5-g7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="VWf-4z-2tB" customClass="ProductSearchViewController" customModule="Budgy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Sxd-Jy-6cM"/>
-                        <viewControllerLayoutGuide type="bottom" id="75d-d2-5BR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g2F-pc-a5j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="w1Z-fw-nUb">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="w1Z-fw-nUb" firstAttribute="top" secondItem="Sxd-Jy-6cM" secondAttribute="bottom" constant="8" id="NK8-X4-YZ7"/>
-                            <constraint firstItem="w1Z-fw-nUb" firstAttribute="leading" secondItem="g2F-pc-a5j" secondAttribute="leadingMargin" constant="-20" id="bR0-sF-rbm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="w1Z-fw-nUb" secondAttribute="trailing" constant="-20" id="fwU-b1-2do"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Busqueda" id="tFv-Kd-aBk"/>
-                    <connections>
-                        <outlet property="search" destination="w1Z-fw-nUb" id="8m6-3w-fgW"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-1047" y="757"/>
-        </scene>
-        <!--Busqueda-->
         <scene sceneID="GaT-vJ-kJy">
             <objects>
-                <tableViewController id="k99-KV-4ZD" customClass="ProductSearchViewController" customModule="Budgy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="k99-KV-4ZD" customClass="ProductSearchViewController" customModule="Tomin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bAc-Rl-ypK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +40,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductSearchViewCell" id="mNN-KN-36Z" customClass="ProductSearchViewCell" customModule="Budgy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductSearchViewCell" id="mNN-KN-36Z" customClass="ProductSearchViewCell" customModule="Tomin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mNN-KN-36Z" id="Fyr-oq-pDu">
@@ -162,14 +129,19 @@
         <!--Productos-->
         <scene sceneID="YO6-Id-u9A">
             <objects>
-                <tableViewController id="3h6-f4-fNc" customClass="ProductTableViewController" customModule="Budgy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3h6-f4-fNc" customClass="ProductTableViewController" customModule="Tomin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9XH-aQ-n4f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="iLw-wG-jbh">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductViewCell" id="ggB-sd-HYN" customClass="ProductViewCell" customModule="Budgy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductViewCell" id="ggB-sd-HYN" customClass="ProductViewCell" customModule="Tomin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggB-sd-HYN" id="ww0-d2-PsQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -233,13 +205,13 @@
         <!--Categorias-->
         <scene sceneID="Ykr-Xr-f4m">
             <objects>
-                <tableViewController id="y0k-de-oTP" customClass="CategoryTableViewController" customModule="Budgy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="y0k-de-oTP" customClass="CategoryTableViewController" customModule="Tomin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBO-EU-4QA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryViewCell" id="JDf-Lr-61F" customClass="CategoryViewCell" customModule="Budgy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryViewCell" id="JDf-Lr-61F" customClass="CategoryViewCell" customModule="Tomin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JDf-Lr-61F" id="2o7-eY-dgg">

@@ -22,7 +22,7 @@ class CategoryTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         
-        model.syncJson()
+//        model.syncJson()
         
         
 //        var data = [String: AnyObject]()
@@ -35,7 +35,7 @@ class CategoryTableViewController: UITableViewController{
     }
     
     override func viewWillAppear(animated: Bool) {
-        categories = model.listProducts("Category")
+        categories = model.list("Category")
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

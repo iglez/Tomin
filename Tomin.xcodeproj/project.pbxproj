@@ -18,8 +18,8 @@
 		93AC63531C76C1E0007F0D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AC63511C76C1E0007F0D37 /* LaunchScreen.storyboard */; };
 		93AC635E1C76C1E0007F0D37 /* BudgyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC635D1C76C1E0007F0D37 /* BudgyTests.swift */; };
 		93AC63691C76C1E0007F0D37 /* BudgyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63681C76C1E0007F0D37 /* BudgyUITests.swift */; };
-		93AC63771C76C270007F0D37 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63761C76C270007F0D37 /* ProductController.swift */; };
 		93AC637D1C76CC67007F0D37 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC637C1C76CC67007F0D37 /* Model.swift */; };
+		93E575541C827FC100F188DA /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E575531C827FC100F188DA /* ProductController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 		93AC63641C76C1E0007F0D37 /* Tomin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tomin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AC63681C76C1E0007F0D37 /* BudgyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgyUITests.swift; sourceTree = "<group>"; };
 		93AC636A1C76C1E0007F0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93AC63761C76C270007F0D37 /* ProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductController.swift; path = ../ProductController.swift; sourceTree = "<group>"; };
 		93AC637C1C76CC67007F0D37 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		93E575531C827FC100F188DA /* ProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			children = (
 				93AC637B1C76CC57007F0D37 /* Models */,
 				938BC0941C7C04A400FB7584 /* CategoryController.swift */,
-				93AC63761C76C270007F0D37 /* ProductController.swift */,
+				93E575531C827FC100F188DA /* ProductController.swift */,
 				936E731E1C7C1C6500991896 /* ProductSearchController.swift */,
 				93AC63451C76C1E0007F0D37 /* AppDelegate.swift */,
 				93AC63471C76C1E0007F0D37 /* ViewController.swift */,
@@ -288,8 +288,8 @@
 				9387B29E1C7EC2BE0033800A /* TestJson.swift in Sources */,
 				936E731F1C7C1C6500991896 /* ProductSearchController.swift in Sources */,
 				93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */,
-				93AC63771C76C270007F0D37 /* ProductController.swift in Sources */,
 				938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */,
+				93E575541C827FC100F188DA /* ProductController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

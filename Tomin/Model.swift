@@ -53,57 +53,66 @@ class Model {
     }
     
     func syncProduct(json: [String: AnyObject]){
-        
         //validate if status is ok
         if let status = json["status"] as? String {
-            print(status)
-            deleteAll("Product")
             
-            if let data = json["data"] as? NSArray {
-                data.forEach({ (item) -> () in
-                    
-                    var product: [String :AnyObject] = [String :AnyObject]()
-                    product["id"] = NSUUID().UUIDString
-                    
-                    if let categoria = item["categoria"] as? String {
-                        product["categoria"] = categoria
+            
+            if status == "ok"{
+                
+                deleteAll("Product")
+                deleteAll("Category")
+                
+                var allProductsCategory: [String :AnyObject] = [String :AnyObject]()
+                allProductsCategory["id"] = ""
+                allProductsCategory["nombre"] = "- Todos -"
+                self.insert("Category", data: allProductsCategory)
+                
+                if let data = json["data"] as? NSArray {
+                    data.forEach({ (item) -> () in
                         
-                        var categorias = [NSManagedObject]()
-                        categorias = self.search("Category", column: "nombre", value: categoria)
-                        if categorias.isEmpty {
-                            var category: [String :AnyObject] = [String :AnyObject]()
-                            category["id"] = NSUUID().UUIDString
-                            category["nombre"] = categoria
-                            self.insert("Category", data: category)
+                        var product: [String :AnyObject] = [String :AnyObject]()
+                        product["id"] = NSUUID().UUIDString
+                        
+                        if let categoria = item["categoria"] as? String {
+                            product["categoria"] = categoria
                             
-                            product["categoriaId"] = category["id"]
-                        } else {
-                            if let categoriaId = categorias.first!.valueForKey("id") as? String {
-                                product["categoriaId"] = categoriaId
+                            var categorias = [NSManagedObject]()
+                            categorias = self.search("Category", column: "nombre", value: categoria)
+                            if categorias.isEmpty {
+                                var category: [String :AnyObject] = [String :AnyObject]()
+                                category["id"] = NSUUID().UUIDString
+                                category["nombre"] = categoria
+                                self.insert("Category", data: category)
+                                
+                                product["categoriaId"] = category["id"]
+                            } else {
+                                if let categoriaId = categorias.first!.valueForKey("id") as? String {
+                                    product["categoriaId"] = categoriaId
+                                }
                             }
+                            
                         }
                         
-                    }
+                        if let clave = item["clave"] as? Int {
+                            product["clave"] = String(clave)
+                        }
+                        
+                        if let imagen = item["imagen"] as? String {
+                            product["imagen"] = imagen
+                        }
+                        
+                        if let nombre = item["nombre"] as? String {
+                            product["nombre"] = nombre
+                        }
+                        
+                        if let precio = item["precio"] as? String {
+                            product["precio"] = precio
+                        }
+                        
+                        insert("Product", data: product)
+                    })
                     
-                    if let clave = item["clave"] as? Int {
-                        product["clave"] = String(clave)
-                    }
-                    
-                    if let imagen = item["imagen"] as? String {
-                        product["imagen"] = imagen
-                    }
-                    
-                    if let nombre = item["nombre"] as? String {
-                        product["nombre"] = nombre
-                    }
-                    
-                    if let precio = item["precio"] as? String {
-                        product["precio"] = precio
-                    }
-                    
-                    insert("Product", data: product)
-                })
-                
+                }
             }
         }
     }
@@ -131,7 +140,7 @@ class Model {
         return isAllDeleted
     }
 
-    func listProducts(table: String)-> [NSManagedObject] {
+    func list(table: String)-> [NSManagedObject] {
         
         var results = [NSManagedObject]()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -176,6 +185,27 @@ class Model {
         let fetchRequest = NSFetchRequest(entityName: table)
 
         fetchRequest.predicate = NSPredicate(format:"\(column) contains[c] %@", value)
+        
+        let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do {
+            results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        return results
+    }
+    
+    func search(table:String, column1:String, value1: String, column2: String, value2: String)-> [NSManagedObject] {
+        
+        var results = [NSManagedObject]()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: table)
+        
+        fetchRequest.predicate = NSPredicate(format:"\(column1) == %@ AND \(column2) contains[c] %@", value1, value2)
         
         let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
         let sortDescriptors = [sectionSortDescriptor]
