@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		936E731F1C7C1C6500991896 /* ProductSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E731E1C7C1C6500991896 /* ProductSearchController.swift */; };
 		9387B29E1C7EC2BE0033800A /* TestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9387B29D1C7EC2BE0033800A /* TestJson.swift */; };
 		938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BC0941C7C04A400FB7584 /* CategoryController.swift */; };
 		93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63451C76C1E0007F0D37 /* AppDelegate.swift */; };
@@ -40,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		936E731E1C7C1C6500991896 /* ProductSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchController.swift; sourceTree = "<group>"; };
 		9387B29D1C7EC2BE0033800A /* TestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJson.swift; sourceTree = "<group>"; };
 		938BC0941C7C04A400FB7584 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		93AC63421C76C1E0007F0D37 /* Tomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +110,6 @@
 				93AC637B1C76CC57007F0D37 /* Models */,
 				938BC0941C7C04A400FB7584 /* CategoryController.swift */,
 				93E575531C827FC100F188DA /* ProductController.swift */,
-				936E731E1C7C1C6500991896 /* ProductSearchController.swift */,
 				93AC63451C76C1E0007F0D37 /* AppDelegate.swift */,
 				93AC63471C76C1E0007F0D37 /* ViewController.swift */,
 				93AC63491C76C1E0007F0D37 /* Main.storyboard */,
@@ -286,7 +283,6 @@
 				93AC63481C76C1E0007F0D37 /* ViewController.swift in Sources */,
 				93AC634E1C76C1E0007F0D37 /* Tomin.xcdatamodeld in Sources */,
 				9387B29E1C7EC2BE0033800A /* TestJson.swift in Sources */,
-				936E731F1C7C1C6500991896 /* ProductSearchController.swift in Sources */,
 				93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */,
 				938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */,
 				93E575541C827FC100F188DA /* ProductController.swift in Sources */,
