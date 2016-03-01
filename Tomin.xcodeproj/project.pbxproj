@@ -19,6 +19,8 @@
 		93AC63691C76C1E0007F0D37 /* BudgyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63681C76C1E0007F0D37 /* BudgyUITests.swift */; };
 		93AC637D1C76CC67007F0D37 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC637C1C76CC67007F0D37 /* Model.swift */; };
 		93E575541C827FC100F188DA /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E575531C827FC100F188DA /* ProductController.swift */; };
+		93E575591C83DFA700F188DA /* logo_usana.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E575581C83DFA700F188DA /* logo_usana.png */; };
+		93E5755C1C8516B500F188DA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E5755B1C8516B500F188DA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		93AC636A1C76C1E0007F0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93AC637C1C76CC67007F0D37 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		93E575531C827FC100F188DA /* ProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		93E575581C83DFA700F188DA /* logo_usana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_usana.png; path = images/logo_usana.png; sourceTree = "<group>"; };
+		93E5755B1C8516B500F188DA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		93AC63441C76C1E0007F0D37 /* Tomin */ = {
 			isa = PBXGroup;
 			children = (
+				93E575551C83DEA900F188DA /* images */,
 				93AC637B1C76CC57007F0D37 /* Models */,
 				938BC0941C7C04A400FB7584 /* CategoryController.swift */,
 				93E575531C827FC100F188DA /* ProductController.swift */,
@@ -144,8 +149,17 @@
 			children = (
 				93AC637C1C76CC67007F0D37 /* Model.swift */,
 				9387B29D1C7EC2BE0033800A /* TestJson.swift */,
+				93E5755B1C8516B500F188DA /* Utils.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		93E575551C83DEA900F188DA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				93E575581C83DFA700F188DA /* logo_usana.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93AC63531C76C1E0007F0D37 /* LaunchScreen.storyboard in Resources */,
+				93E575591C83DFA700F188DA /* logo_usana.png in Resources */,
 				93AC63501C76C1E0007F0D37 /* Assets.xcassets in Resources */,
 				93AC634B1C76C1E0007F0D37 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +301,7 @@
 				93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */,
 				938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */,
 				93E575541C827FC100F188DA /* ProductController.swift in Sources */,
+				93E5755C1C8516B500F188DA /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

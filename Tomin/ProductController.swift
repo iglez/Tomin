@@ -14,6 +14,8 @@ class ProductViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var clave: UILabel!
+    @IBOutlet weak var imagen: UIImageView!
 }
 
 
@@ -72,7 +74,22 @@ class ProductTableViewController: UITableViewController {
         let product = products[indexPath.row]
         
         cell.name.text = product.valueForKey("nombre") as? String
-        cell.price.text = ""
+        cell.price.text = product.valueForKey("precio") as? String
+        cell.clave.text = "Clave \(product.valueForKey("clave") as! String)"
+        
+        // validate if logo is already local
+        
+        let imageUrl = product.valueForKey("imagen")
+        
+        if let imgUrl = imageUrl as? String {
+            if imgUrl != "" {
+                Util().asyncLoadImage(cell.imagen!, tag: 3, url:imgUrl)
+            }
+        }
+        
+        
+        
+        
         
         return cell
     }
