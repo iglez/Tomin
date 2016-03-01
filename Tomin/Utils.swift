@@ -13,7 +13,7 @@ class Util {
     
     var imageCache = [String : UIImage]()
     
-    func asyncLoadImage(image: UIImageView, tag: Int, url: String) {
+    func asyncLoadImage(image: UIImageView, tag: Int, url: String, defaultImage: String = "logo_usana.png") {
         // TODO: Placeholder
         image.tag = tag
         if let imageData = imageCache[url] {
@@ -38,7 +38,8 @@ class Util {
                         }
                     })
                 } else {
-                    print("error: \(error!.localizedDescription)")
+//                    print("error: \(error!.localizedDescription)")
+                    image.image = UIImage(named: defaultImage)
                 }
             })
         }

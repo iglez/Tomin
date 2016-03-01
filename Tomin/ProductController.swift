@@ -25,6 +25,13 @@ class ProductTableViewController: UITableViewController {
     var categoryId = ""
     var products = [NSManagedObject]()
     
+    deinit{
+        if let superView = searchController.view.superview
+        {
+            superView.removeFromSuperview()
+        }
+    }
+    
     override func viewDidLoad() {
         
         searchController.searchResultsUpdater = self
@@ -86,7 +93,7 @@ class ProductTableViewController: UITableViewController {
                 Util().asyncLoadImage(cell.imagen!, tag: 3, url:imgUrl)
             }
         }
-        
+//        cell.imagen.image = UIImage(named: "logo_usana.png")
         
         
         
