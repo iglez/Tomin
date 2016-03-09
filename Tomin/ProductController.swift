@@ -12,10 +12,22 @@ import CoreData
 
 class ProductViewCell: UITableViewCell {
     
+    var productID: String = ""
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var clave: UILabel!
     @IBOutlet weak var imagen: UIImageView!
+    
+    @IBAction func addProduct(sender: AnyObject) {
+        
+        if globals.cartId == "" {
+            print("create cartId")
+        }
+        
+        print("productID \(productID)")
+    }
+    
+    
 }
 
 
@@ -80,12 +92,23 @@ class ProductTableViewController: UITableViewController {
         
         let product = products[indexPath.row]
         
-        cell.name.text = product.valueForKey("nombre") as? String
-        cell.price.text = product.valueForKey("precio") as? String
-        cell.clave.text = "Clave \(product.valueForKey("clave") as! String)"
+        if let productId = product.valueForKey("id") as? String {
+            cell.productID = productId
+        }
+        
+        if let productName = product.valueForKey("nombre") as? String {
+            cell.name.text = productName
+        }
+        
+        if let productPrecio = product.valueForKey("precio") as? String {
+          cell.price.text = productPrecio
+        }
+        
+        if let productClave = product.valueForKey("clave") as? String {
+           cell.clave.text = "Clave \(productClave)"
+        }
         
         // validate if logo is already local
-        
         let imageUrl = product.valueForKey("imagen")
         
         if let imgUrl = imageUrl as? String {
