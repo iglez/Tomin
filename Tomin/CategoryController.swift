@@ -22,7 +22,7 @@ class CategoryTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         
-//        model.syncJson()
+        model.syncJson()
         
         
 //        var data = [String: AnyObject]()

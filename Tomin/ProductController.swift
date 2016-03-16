@@ -22,9 +22,23 @@ class ProductViewCell: UITableViewCell {
         
         if globals.cartId == "" {
             print("create cartId")
+            globals.cartId = NSUUID().UUIDString
+            
+            var cartData: [String :AnyObject] = [String :AnyObject]()
+            cartData["id"] = globals.cartId
+            cartData["total"] = 0
+            model.insert("Cart", data: cartData)
         }
         
+        //TODO: Validate if already exist, and if it is the add quantity
         print("productID \(productID)")
+        
+        var cartProduct: [String: AnyObject] = [String: AnyObject]()
+        cartProduct["id"] = NSUUID().UUIDString
+        cartProduct["cartId"] = globals.cartId
+        cartProduct["productId"] = productID
+        cartProduct["cantidad"] = 1
+        model.insert("CartProduct", data: cartProduct)
     }
     
     

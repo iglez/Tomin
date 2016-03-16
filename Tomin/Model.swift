@@ -140,14 +140,14 @@ class Model {
         return isAllDeleted
     }
 
-    func list(table: String)-> [NSManagedObject] {
+    func list(table: String, sort: String = "nombre")-> [NSManagedObject] {
         
         var results = [NSManagedObject]()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: table)
         
-        let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
+        let sectionSortDescriptor = NSSortDescriptor(key: sort, ascending: true)
         let sortDescriptors = [sectionSortDescriptor]
         fetchRequest.sortDescriptors = sortDescriptors
         
