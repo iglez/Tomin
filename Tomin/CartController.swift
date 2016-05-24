@@ -12,6 +12,7 @@ import CoreData
 
 class CartProductViewCell: UITableViewCell {
     
+    var parent: CartTableViewController!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var key: UILabel!
@@ -33,6 +34,8 @@ class CartProductViewCell: UITableViewCell {
                 let numberFormatter = NSNumberFormatter()
                 numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
                 importe.text = "MXN $ \(numberFormatter.stringFromNumber(largeNumber)!)"
+                
+                parent.calcTotal()
             }
         }
     }
@@ -66,6 +69,7 @@ class CartTableViewController: UITableViewController{
                 Util().asyncLoadImage(cell.imagen!, tag: 3, url:imageUrl!)
             }
         
+        cell.parent = self
         cell.render()
         
         return cell
@@ -79,6 +83,14 @@ class CartTableViewController: UITableViewController{
     func reload(){
         cartProducts = model.list("CartProduct", sort: "id")
         self.tableView.reloadData()
+    }
+    
+    func calcTotal(){
+        //cartProducts.count
+        //let cartProduct = cartProducts[indexPath.row]
+        
+        let cartVC:CartViewController = self.parentViewController as! CartViewController
+        cartVC.total.text = "Total MXN $ "
     }
     
 }
