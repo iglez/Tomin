@@ -13,6 +13,7 @@ import CoreData
 class ProductViewCell: UITableViewCell {
     
     var productID: String = ""
+    var imagenUrl: String = ""
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var clave: UILabel!
@@ -32,12 +33,19 @@ class ProductViewCell: UITableViewCell {
         
         //TODO: Validate if already exist, and if it is the add quantity
         print("productID \(productID)")
+        print("name \(name.text!)")
+        print("precio \(Double(price.text!.stringByReplacingOccurrencesOfString("MXN $", withString: "")))")
+        
         
         var cartProduct: [String: AnyObject] = [String: AnyObject]()
         cartProduct["id"] = NSUUID().UUIDString
         cartProduct["cartId"] = globals.cartId
         cartProduct["productId"] = productID
         cartProduct["cantidad"] = 1
+        cartProduct["nombre"] = name.text!
+        cartProduct["clave"] = clave.text!
+        cartProduct["imagen"] = imagenUrl
+        cartProduct["precio"] = Double(price.text!.stringByReplacingOccurrencesOfString("MXN $", withString: ""))
         model.insert("CartProduct", data: cartProduct)
     }
     
@@ -127,6 +135,7 @@ class ProductTableViewController: UITableViewController {
         
         if let imgUrl = imageUrl as? String {
             if imgUrl != "" {
+                cell.imagenUrl = imgUrl
                 Util().asyncLoadImage(cell.imagen!, tag: 3, url:imgUrl)
             }
         }

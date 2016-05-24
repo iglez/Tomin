@@ -13,7 +13,29 @@ import CoreData
 class CartProductViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
-   
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var key: UILabel!
+    @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var cantidad: UILabel!
+    @IBOutlet weak var contador: UIStepper!
+    @IBOutlet weak var importe: UILabel!
+    
+    @IBAction func quantityChange(sender: UIStepper) {
+        cantidad.text = Int(sender.value).description
+        render()
+    }
+ 
+    func render(){
+        if let cantidad = Double(cantidad.text!){
+            if let precio = Double(price.text!.stringByReplacingOccurrencesOfString("MXN $", withString: "")){
+                
+                let largeNumber = cantidad * precio
+                let numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+                importe.text = "MXN $ \(numberFormatter.stringFromNumber(largeNumber)!)"
+            }
+        }
+    }
  
 }
 
@@ -32,15 +54,24 @@ class CartTableViewController: UITableViewController{
         
         let cell: CartProductViewCell = tableView.dequeueReusableCellWithIdentifier("CartProductViewCellViewCell", forIndexPath: indexPath) as! CartProductViewCell
         
-        //let cartProduct = cartProducts[indexPath.row]
+        let cartProduct = cartProducts[indexPath.row]
+        cell.name.text = cartProduct.valueForKey("nombre") as? String
+        cell.price.text = "MXN $\(cartProduct.valueForKey("precio") as! Double)"
+        cell.key.text = cartProduct.valueForKey("clave") as? String
+        cell.cantidad.text = "\(cartProduct.valueForKey("cantidad") as! Int)"
+        cell.contador.value = Double(cartProduct.valueForKey("cantidad") as! Int)
         
-        //cell.name.text = cartProduct.valueForKey("id") as? String
-        cell.name.text = "The name"
+        let imageUrl = cartProduct.valueForKey("imagen") as? String
+            if imageUrl != "" {
+                Util().asyncLoadImage(cell.imagen!, tag: 3, url:imageUrl!)
+            }
+        
+        cell.render()
         
         return cell
         
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cartProducts.count
     }
