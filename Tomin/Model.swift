@@ -132,6 +132,11 @@ class Model {
             {
                 let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
                 managedContext.deleteObject(managedObjectData)
+                do {
+                    try managedContext.save()
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                }
                 isAllDeleted = true
             }
         } catch let error as NSError {

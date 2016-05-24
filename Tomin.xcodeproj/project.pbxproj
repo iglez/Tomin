@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		930A06D91C9908C8007D76F6 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930A06D81C9908C8007D76F6 /* CartController.swift */; };
 		93539D051C90776D00DD91E6 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93539D041C90776D00DD91E6 /* Globals.swift */; };
+		93814F551CF4148C00432E58 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93814F541CF4148C00432E58 /* CartViewController.swift */; };
 		9387B29E1C7EC2BE0033800A /* TestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9387B29D1C7EC2BE0033800A /* TestJson.swift */; };
 		938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938BC0941C7C04A400FB7584 /* CategoryController.swift */; };
 		93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC63451C76C1E0007F0D37 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		930A06D81C9908C8007D76F6 /* CartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		93539D041C90776D00DD91E6 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		93814F541CF4148C00432E58 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		9387B29D1C7EC2BE0033800A /* TestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJson.swift; sourceTree = "<group>"; };
 		938BC0941C7C04A400FB7584 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		93AC63421C76C1E0007F0D37 /* Tomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				938BC0941C7C04A400FB7584 /* CategoryController.swift */,
 				93E575531C827FC100F188DA /* ProductController.swift */,
 				930A06D81C9908C8007D76F6 /* CartController.swift */,
+				93814F541CF4148C00432E58 /* CartViewController.swift */,
 				93AC63451C76C1E0007F0D37 /* AppDelegate.swift */,
 				93AC63471C76C1E0007F0D37 /* ViewController.swift */,
 				93AC63491C76C1E0007F0D37 /* Main.storyboard */,
@@ -308,6 +311,7 @@
 				93AC63461C76C1E0007F0D37 /* AppDelegate.swift in Sources */,
 				938BC0951C7C04A400FB7584 /* CategoryController.swift in Sources */,
 				93E575541C827FC100F188DA /* ProductController.swift in Sources */,
+				93814F551CF4148C00432E58 /* CartViewController.swift in Sources */,
 				930A06D91C9908C8007D76F6 /* CartController.swift in Sources */,
 				93E5755C1C8516B500F188DA /* Utils.swift in Sources */,
 				93539D051C90776D00DD91E6 /* Globals.swift in Sources */,

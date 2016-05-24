@@ -28,7 +28,7 @@
         <!--Carrito-->
         <scene sceneID="0q3-J2-Gex">
             <objects>
-                <viewController id="Tjp-wV-hjW" sceneMemberID="viewController">
+                <viewController id="Tjp-wV-hjW" customClass="CartViewController" customModule="Tomin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v4G-nX-kwz"/>
                         <viewControllerLayoutGuide type="bottom" id="eiZ-0d-tjt"/>
@@ -40,29 +40,79 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-Hd-7Wc">
                                 <rect key="frame" x="0.0" y="130" width="600" height="421"/>
                                 <connections>
-                                    <segue destination="0mn-ce-XI8" kind="embed" identifier="" id="3Rf-g0-G06"/>
+                                    <segue destination="0mn-ce-XI8" kind="embed" identifier="cartTable" id="3Rf-g0-G06"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total: MXN $ 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5e9-18-Yp9">
-                                <rect key="frame" x="20" y="39" width="265" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: MXN $ 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5e9-18-Yp9">
+                                <rect key="frame" x="20" y="51" width="265" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="qQv-y1-d6L"/>
+                                    <constraint firstAttribute="width" constant="265" id="xe6-1d-Uda"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xe6-1d-Uda"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-kx-qyQ">
-                                <rect key="frame" x="427" y="49" width="153" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-kx-qyQ">
+                                <rect key="frame" x="427" y="56" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="6yb-hQ-OX4"/>
+                                    <constraint firstAttribute="width" constant="153" id="8o6-Vj-Jxu"/>
+                                    <constraint firstAttribute="width" constant="153" id="bRq-H3-AH1"/>
+                                </constraints>
                                 <state key="normal" title="Compartir"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6yb-hQ-OX4"/>
+                                        <exclude reference="8o6-Vj-Jxu"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="share:" destination="Tjp-wV-hjW" eventType="touchUpInside" id="c9W-Pp-q4B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NMl-Hd-7Wc" firstAttribute="top" secondItem="F2O-kx-qyQ" secondAttribute="bottom" constant="51" id="3Hp-ma-Axa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F2O-kx-qyQ" secondAttribute="trailing" id="4kA-Nv-MCJ"/>
+                            <constraint firstItem="5e9-18-Yp9" firstAttribute="centerY" secondItem="F2O-kx-qyQ" secondAttribute="centerY" constant="-0.5" id="8Se-nm-hra"/>
                             <constraint firstItem="NMl-Hd-7Wc" firstAttribute="top" secondItem="v4G-nX-kwz" secondAttribute="bottom" constant="110" id="C8K-g5-nqd"/>
                             <constraint firstItem="eiZ-0d-tjt" firstAttribute="top" secondItem="NMl-Hd-7Wc" secondAttribute="bottom" id="NS6-vB-hH6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F2O-kx-qyQ" secondAttribute="trailing" id="TPn-k2-64e"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="5e9-18-Yp9" secondAttribute="leading" id="ULI-iF-Biy"/>
+                            <constraint firstItem="5e9-18-Yp9" firstAttribute="top" secondItem="v4G-nX-kwz" secondAttribute="bottom" constant="31" id="Y3Z-Np-mFT"/>
+                            <constraint firstItem="F2O-kx-qyQ" firstAttribute="top" secondItem="v4G-nX-kwz" secondAttribute="bottom" constant="29" id="c3o-EP-ivB"/>
+                            <constraint firstItem="F2O-kx-qyQ" firstAttribute="trailing" secondItem="7Eg-V4-QFN" secondAttribute="trailingMargin" id="i5t-6n-v88"/>
                             <constraint firstItem="NMl-Hd-7Wc" firstAttribute="leading" secondItem="7Eg-V4-QFN" secondAttribute="leadingMargin" constant="-20" id="len-kW-Ru7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NMl-Hd-7Wc" secondAttribute="trailing" constant="-20" id="nhZ-BA-5a9"/>
+                            <constraint firstItem="5e9-18-Yp9" firstAttribute="leading" secondItem="7Eg-V4-QFN" secondAttribute="leadingMargin" id="nsc-hf-cLi"/>
+                            <constraint firstItem="5e9-18-Yp9" firstAttribute="top" secondItem="v4G-nX-kwz" secondAttribute="bottom" constant="19" id="o80-0H-9Gc"/>
+                            <constraint firstItem="NMl-Hd-7Wc" firstAttribute="top" secondItem="5e9-18-Yp9" secondAttribute="bottom" constant="40" id="pHc-O3-GJ4"/>
+                            <constraint firstItem="F2O-kx-qyQ" firstAttribute="top" secondItem="v4G-nX-kwz" secondAttribute="bottom" constant="24" id="tjh-ql-Klj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ULI-iF-Biy"/>
+                                <exclude reference="o80-0H-9Gc"/>
+                                <exclude reference="3Hp-ma-Axa"/>
+                                <exclude reference="4kA-Nv-MCJ"/>
+                                <exclude reference="TPn-k2-64e"/>
+                                <exclude reference="c3o-EP-ivB"/>
+                                <exclude reference="tjh-ql-Klj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Carrito" id="uhO-Nj-pRF"/>
+                    <connections>
+                        <outlet property="contenedor" destination="NMl-Hd-7Wc" id="lSs-wr-4ES"/>
+                        <outlet property="total" destination="5e9-18-Yp9" id="t2W-gM-4Pd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWl-KS-7JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

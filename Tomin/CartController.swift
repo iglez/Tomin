@@ -47,7 +47,7 @@ class CartTableViewController: UITableViewController{
     }
     
     override func viewWillAppear(animated: Bool) {
-        cartProducts = model.list("CartProduct", sort: "id")
+        reload()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,6 +74,11 @@ class CartTableViewController: UITableViewController{
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cartProducts.count
+    }
+    
+    func reload(){
+        cartProducts = model.list("CartProduct", sort: "id")
+        self.tableView.reloadData()
     }
     
 }
