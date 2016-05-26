@@ -13,6 +13,12 @@ class Util {
     
     var imageCache = [String : UIImage]()
     
+    func formatNumber(number: Double)-> String {
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        return "\(numberFormatter.stringFromNumber(number)!)"
+    }
+    
     func asyncLoadImage(image: UIImageView, tag: Int, url: String, defaultImage: String = "logo_usana.png") {
         // TODO: Placeholder
         image.tag = tag

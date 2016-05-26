@@ -13,6 +13,8 @@ import CoreData
 class CartProductViewCell: UITableViewCell {
     
     var parent: CartTableViewController!
+    var id: String = ""
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var key: UILabel!
@@ -29,6 +31,10 @@ class CartProductViewCell: UITableViewCell {
     func render(){
         if let cantidad = Double(cantidad.text!){
             if let precio = Double(price.text!.stringByReplacingOccurrencesOfString("MXN $", withString: "")){
+                
+                var cartData: [String :AnyObject] = [String :AnyObject]()
+                cartData["cantidad"] = cantidad
+                model.update("CartProduct", column: "id", value: id, data: cartData)
                 
                 let largeNumber = cantidad * precio
                 let numberFormatter = NSNumberFormatter()
@@ -58,6 +64,7 @@ class CartTableViewController: UITableViewController{
         let cell: CartProductViewCell = tableView.dequeueReusableCellWithIdentifier("CartProductViewCellViewCell", forIndexPath: indexPath) as! CartProductViewCell
         
         let cartProduct = cartProducts[indexPath.row]
+        cell.id = cartProduct.valueForKey("id") as! String
         cell.name.text = cartProduct.valueForKey("nombre") as? String
         cell.price.text = "MXN $\(cartProduct.valueForKey("precio") as! Double)"
         cell.key.text = cartProduct.valueForKey("clave") as? String
@@ -86,11 +93,19 @@ class CartTableViewController: UITableViewController{
     }
     
     func calcTotal(){
-        //cartProducts.count
-        //let cartProduct = cartProducts[indexPath.row]
+        
+        var subTotal: Double = 0
+        for cartProduct in cartProducts {
+            let cantidad = Double(cartProduct.valueForKey("cantidad") as! Int)
+            let precio = cartProduct.valueForKey("precio") as! Double
+            
+            let importe = cantidad * precio
+            subTotal = subTotal + importe
+//            print("\(cantidad) x \(precio) = \(importe)")
+        }
         
         let cartVC:CartViewController = self.parentViewController as! CartViewController
-        cartVC.total.text = "Total MXN $ "
+        cartVC.total.text = "Total MXN $\(Util().formatNumber(subTotal))"
     }
     
 }

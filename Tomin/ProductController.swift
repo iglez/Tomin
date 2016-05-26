@@ -22,7 +22,7 @@ class ProductViewCell: UITableViewCell {
     @IBAction func addProduct(sender: AnyObject) {
         
         if globals.cartId == "" {
-            print("create cartId")
+//            print("create cartId")
             globals.cartId = NSUUID().UUIDString
             
             var cartData: [String :AnyObject] = [String :AnyObject]()
@@ -32,9 +32,9 @@ class ProductViewCell: UITableViewCell {
         }
         
         //TODO: Validate if already exist, and if it is the add quantity
-        print("productID \(productID)")
-        print("name \(name.text!)")
-        print("precio \(Double(price.text!.stringByReplacingOccurrencesOfString("MXN $", withString: "")))")
+//        print("productID \(productID)")
+//        print("name \(name.text!)")
+//        print("precio \(Double(price.text!.stringByReplacingOccurrencesOfString("MXN $", withString: "")))")
         
         
         var cartProduct: [String: AnyObject] = [String: AnyObject]()

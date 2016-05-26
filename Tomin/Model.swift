@@ -132,11 +132,9 @@ class Model {
             {
                 let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
                 managedContext.deleteObject(managedObjectData)
-                do {
-                    try managedContext.save()
-                } catch let error as NSError  {
-                    print("Could not save \(error), \(error.userInfo)")
-                }
+                
+                try managedContext.save()
+                
                 isAllDeleted = true
             }
         } catch let error as NSError {
@@ -163,6 +161,7 @@ class Model {
         }
         return results
     }
+
     
     func fetch(table:String, column: String, value: String)-> [NSManagedObject] {
         var results = [NSManagedObject]()
@@ -177,6 +176,7 @@ class Model {
         
         do {
             results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -251,6 +251,38 @@ class Model {
             print("Could not save \(error), \(error.userInfo)")
         }
         return isInserterd
+    }
+    
+    func update(table: String, column: String, value: String, data: [String: AnyObject])-> Bool {
+        
+        var results = [NSManagedObject]()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: table)
+        fetchRequest.predicate = NSPredicate(format:"\(column) == %@", value)
+        
+        let sectionSortDescriptor = NSSortDescriptor(key: "nombre", ascending: true)
+        let sortDescriptors = [sectionSortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do {
+            results = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+            if(results.count >= 1){
+                
+                let managedObject = results.first
+                managedObject!.setValuesForKeysWithDictionary(data)
+                
+                try managedContext.save()
+                
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        
+        return true
     }
 
     

@@ -18,9 +18,10 @@ class CartViewController: UIViewController {
     @IBOutlet weak var contenedor: UIView!
     
     @IBAction func share(sender: AnyObject) {
-        print("share...")
+//        print("share...")
         model.deleteAll("CartProduct")
         cartTableVC.reload()
+        total.text = "Total MXN $0"
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
